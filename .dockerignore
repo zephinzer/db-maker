@@ -1,3 +1,6 @@
 Dockerfile
 docker-compose.yml
+Makefile
+Makefile.properties
 node_modules
+sample.properties

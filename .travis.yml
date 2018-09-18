@@ -11,6 +11,7 @@
 
 sudo: required
 language: bash
+if: branch = master
 services:
 - docker
 before_script:
