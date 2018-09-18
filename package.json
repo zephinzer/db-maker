@@ -1,12 +1,12 @@
 {
-  "name": "docker-db-adder",
+  "name": "db-maker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "up": "docker-compose up -V --build",
     "down": "docker-compose down && docker-compose rm -f -s -v",
-    "debug": "docker exec -it docker_db_adder_mysql mysql -uroot -ppassword"
+    "debug": "docker exec -it db_maker_mysql mysql -uroot -ppassword"
   },
   "keywords": [],
   "author": "",

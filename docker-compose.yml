@@ -1,11 +1,11 @@
 version: "3.5"
 networks:
-  docker-db-adder:
-    name: docker-db-adder
+  db-maker:
+    name: db-maker
 services:
   app:
     build: .
-    container_name: docker_db_adder_app
+    container_name: db_maker_app
     entrypoint: ["node", "./index.js"]
     environment:
       PORT: 3000
@@ -13,7 +13,7 @@ services:
     - 3000:3000
   mysql:
     image: mysql:5.7.23
-    container_name: docker_db_adder_mysql
+    container_name: db_maker_mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: database
