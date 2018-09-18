@@ -24,8 +24,10 @@ script:
 - echo "DOCKERUSER=${DH_NAMESPACE}" >> Makefile.properties
 - echo "DOCKERIMAGE=${DH_IMAGE}" >> Makefile.properties
 # run the build/publish, see Makefile for more info
-- make publish
+- make build
 - git checkout ${TRAVIS_BRANCH}
 - make iterate.version
 - git remote set-url origin https://${GH_USERNAME}:${GH_TOKEN}@github.com/${GH_NAMESPACE}/${GH_REPO}.git
 - git push --tags
+- make publish
+- make publish.version
