@@ -11,10 +11,9 @@ publish: build
 	docker push $(DOCKERREGISTRY)/$(DOCKERREPO):latest
 
 publish.version: build
-	docker run -v "$(shell pwd):/app" zephinzer/semver get-latest -q > ./.version
-	docker tag $(DOCKERREPO):latest $(DOCKERREGISTRY)/$(DOCKERREPO):$(shell cat ./.version)
-	docker push $(DOCKERREGISTRY)/$(DOCKERREPO):$(shell cat ./.version)
-	rm -rf ./.version
+	$(eval TAG=$(shell docker run -v "$(shell pwd):/app" zephinzer/semver get-latest -q))
+	docker tag $(DOCKERREPO):latest $(DOCKERREGISTRY)/$(DOCKERREPO):$(TAG)
+	docker push $(DOCKERREGISTRY)/$(DOCKERREPO):$(TAG)
 
 iterate.version:
 	docker run -v "$(shell pwd):/app" zephinzer/semver iterate
