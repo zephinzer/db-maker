@@ -1,0 +1,21 @@
+{
+  "name": "docker-db-adder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "up": "docker-compose up -V --build",
+    "down": "docker-compose down && docker-compose rm -f -s -v",
+    "debug": "docker exec -it docker_db_adder_mysql mysql -uroot -ppassword"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "case": "^1.5.5",
+    "express": "^4.16.3",
+    "knex": "^0.15.2",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.1"
+  }
+}
