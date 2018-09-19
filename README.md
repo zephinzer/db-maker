@@ -1,5 +1,7 @@
 # DB Maker
 
+[![Build Status](https://travis-ci.org/zephinzer/db-maker.svg?branch=master)](https://travis-ci.org/zephinzer/db-maker)
+
 Service for creating new databases in Docker environments. This service exists to overcome the limitations of the MySQL Docker image which can only create a single database. Call this service to provision a new database.
 
 ## Usage
