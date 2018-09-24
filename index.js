@@ -6,7 +6,7 @@ const knex = require('knex');
 
 const app = express();
 
-app.use('/:clientName/:host/:rootPassword/:databaseName/:databaserUser/:databasePassword', (req, res) => {
+app.use('/:clientName/:host/:rootPassword/:databaseName/:databaseUser/:databasePassword', (req, res) => {
   const {
     clientName,
     host,
